@@ -1,0 +1,24 @@
+.standart-button {
+    font-family: rick-and-morty;
+    font-weight: bold;
+    font-size: 20px;
+
+    display: block; 
+    padding: 8px; 
+    width: 80%; 
+    min-width: 150px;
+    max-width: 170px; 
+    background: #fff; 
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 8px; 
+    color: #fff; 
+    text-align: center; 
+    text-decoration: none; 
+    letter-spacing: 1px; 
+}
+
+.standart-button:hover { 
+    background: #fff; 
+    color: #000; 
+    transition: all 0.5s ease-in; 
+}

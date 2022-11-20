@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'rick-and-morty';
+  src: url("./fonts/get-schwifty.ttf") format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Указываем box sizing */
 *,
 *::before,
@@ -76,3 +86,4 @@ select {
     scroll-behavior: auto !important;
   }
 }
+

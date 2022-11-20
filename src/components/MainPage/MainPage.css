@@ -1,0 +1,61 @@
+.main-page {
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    padding: 50px 200px 50px 200px;
+    height: 90vh;
+    background-color: #360033;
+
+    background: linear-gradient(to right, #0b8793, #360033); 
+    
+    animation: gradient 10s infinite linear; 
+    background-size: 400%; 
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* max-width: 500px; */
+    max-width: 30vw;
+    
+}
+
+h1 {
+    font-family: rick-and-morty;
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+div{
+    font-family: 'Sono', sans-serif;
+    font-size: large;
+    color:aliceblue;
+}
+
+.text-box{
+    margin: 0 0 50px 0;
+}
+
+.button-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 70px 0 0;
+}
+
+.main-image-container{
+    max-width: 35vw;
+
+}
