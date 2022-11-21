@@ -1,6 +1,6 @@
 import './MainPage.css';
 import mainImage from "../../images/mainImage.png"
-import Button from '../Button/Button';
+import Button from '../../components/Button/Button';
 
 function MainPage() {
     return (
