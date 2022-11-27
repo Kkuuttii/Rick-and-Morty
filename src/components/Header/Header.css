@@ -2,18 +2,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
+    height: 10%;
     padding: 0 100px 0 100px;
 
     background-color: #360033;
     background: linear-gradient(to right, #0b838e, #320030); 
     animation: gradient 10s infinite linear; 
     background-size: 400%; 
+
 }
 
 .header-button {
     min-width: 100px!important; 
-    color: rgb(255, 0, 43);
 } 
 
 @keyframes gradient {
