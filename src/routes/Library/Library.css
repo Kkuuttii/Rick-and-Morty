@@ -1,0 +1,27 @@
+.library {
+    width: 100vw;
+    height: 100%;
+    background-color: aquamarine;
+  }
+  
+  .character-cards {
+    display: flex;
+    /* -webkit-box-pack: center; */
+    justify-content: center;
+    /* -webkit-box-align: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1920px;
+  }
+  
+  .library-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .library-title h2{
+    font-family: rick-and-morty;
+    font-size: 50px;
+    margin-top: 20px;
+  }
+  

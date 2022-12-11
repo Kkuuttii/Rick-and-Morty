@@ -1,8 +1,11 @@
 import './MainPage.css';
 import mainImage from "../../images/mainImage.png"
 import Button from '../../components/Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 function MainPage() {
+    const navigate = useNavigate();
+
     return (
         <div className='main-page'>
             <div className='info-box'>
@@ -11,8 +14,8 @@ function MainPage() {
                     <p>The show revolves around the adventures of the members of the Smith household, which consists of parents Jerry and Beth, their children Summer and Morty, and Beth's father, Rick Sanchez, who lives with them as a guest. According to Justin Roiland, the family lives outside of Seattle, Washington.The adventures of Rick and Morty, however, take place across an infinite number of realities, with the characters travelling to other planets and dimensions through portals and Rick's flying saucer.</p>
                 </div>
                 <div className='button-wrapper'>
-                    <Button/>
-                    <Button/>
+                    <Button text='Library' onClick={()=>navigate('/library')}/>
+                    <Button text='Quiz' onClick={()=>navigate('/quiz')}/>
                 </div>
 
             </div>

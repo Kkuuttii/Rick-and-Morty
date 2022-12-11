@@ -1,0 +1,147 @@
+.about {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: black;
+    height: 100%;
+
+    background: linear-gradient(to right, #0b8793, #360033);
+    animation: gradient 10s infinite linear; 
+    background-size: 400%;
+  }
+  
+  .head{
+    position: relative;
+    min-width: 100vw;
+    height: 100%;
+    background-color: #360033;
+    background: url('../../images/about.png');
+
+     -webkit-background-size: cover;
+          background-size: cover;
+          background-position:center; 
+
+  }
+
+  .head-text{
+    position: relative;
+    z-index: 2;
+
+    margin: 0 20% 0 20%;
+
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #360033;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.5;
+
+    background: linear-gradient(to right, #0b8793, #360033);
+    animation: gradient 10s infinite linear; 
+    background-size: 400%; 
+  }
+
+  @keyframes gradient {
+      0% {
+          background-position: 80% 0%;
+      }
+      50% {
+          background-position: 20% 100%;
+      }
+      100% {
+          background-position: 80% 0%;
+      }
+  }
+
+  .about-title {
+    padding-top: 10%;
+  }
+
+  .about-button-wrapper{
+    padding-top: 5%;
+  }
+
+  
+
+
+
+
+
+
+
+
+  .fun-facts{
+    min-width: 100vw;
+    height: 100vh;
+    background-color: green;
+  }
+  
+  
+  .fact-cards{
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+  }
+  
+  
+  
+  .themes{
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    min-width: 100vw;
+    height: 100vh;
+    /* background-color: indianred; */
+  }
+  
+  .themes-image {
+    background-color: violet;
+    width: 45vw;
+    height: 100vh;
+  }
+  
+  .themes-text{
+    width: 40vw;
+    height: 100vh;
+  }
+  
+  
+  .main-characters{
+    min-width: 100vw;
+    height: 100vh;
+    background-color: rgb(47, 73, 82);
+  }
+  
+  .main-characters-cards{
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between
+  }
+  
+  .site-info{
+    min-width: 100vw;
+    height: 100vh;
+    background-color: lightseagreen;
+  }
+  
+  .site-info-image{
+    background-color: violet;
+    width: 45vw;
+    height: 80vh;
+  }
+  
+  .footer{
+    min-width: 100vw;
+    height: 20vh;
+    background-color: lime;
+  }
+

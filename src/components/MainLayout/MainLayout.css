@@ -1,0 +1,11 @@
+.main-layout{
+    height: 100%;
+}
+
+.content{
+    background-color: brown;
+    height: 90%;
+    overflow: auto;
+    overflow-x: hidden;
+   
+}
