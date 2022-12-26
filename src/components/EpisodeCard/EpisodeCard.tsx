@@ -28,7 +28,6 @@ function EpisodeCard({onClick, link}: IEpisodeCard) {
             let response = await axios.get(link);
             setEpisode(response.data);
             setIsLoading(false);
-            console.log(response);
     }, [link])
 
     useEffect (()=> {
@@ -41,7 +40,7 @@ function EpisodeCard({onClick, link}: IEpisodeCard) {
                     <img src={loading} alt="Идет загрузка" className="loading-image"/>
                 </div>}
 
-            {(isLoading === false) && <div className="episode-info">
+            {(!isLoading) && <div className="episode-info">
                 <div className="episode-info-title">Episode info</div>
                 <div>Name: {episode?.name}</div>
                 <div>Season: {episode?.episode}</div>
