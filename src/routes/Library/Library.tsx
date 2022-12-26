@@ -46,12 +46,12 @@ function Library() {
     setEpisodeInfo(episodeURL);
   }
 
-  const HandlerClickCurrentPage = () => {
-
+  const HandlerClickCurrentPage = (pageSelected: number) => {
+    setCurrentPage(pageSelected)
   }
 
   async function getCharacterInfo () {
-      let response = await axios.get(`https://rickandmortyapi.com/api/character/?page={currentPage}`);
+      let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
       console.log(response);
       setCharacterInfo(response.data.results);
       setPages(response.data.info.pages)
@@ -59,7 +59,7 @@ function Library() {
 
   useEffect (()=> {
     getCharacterInfo();
-  }, []);
+  }, [currentPage]);
  
 
   let characterCards = useMemo(()=>{
@@ -89,9 +89,13 @@ function Library() {
         </div>
 
         
-        {/* <Button text ={`${count}`} onClick={() => setCount((prev) => prev+1)}/>
-        <Button text ={`${count2}`} onClick={() => count2+1}/> */}
-        <Pagination pagesCount={pages} onClick={HandlerClickCurrentPage}/>
+       
+        <Pagination pagesCount={pages} onClick={(currentPage) => {
+          HandlerClickCurrentPage(currentPage);
+          console.log(currentPage);
+        }} currentPage={currentPage}/>
+
+        
         <div>1 2 3 4 ... 42</div>
       </div>
     )
