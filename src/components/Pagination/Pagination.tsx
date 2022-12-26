@@ -3,50 +3,67 @@ import Button from '../Button/Button';
 
 interface IPagination{
     pagesCount: number;
-    onClick: 
+    onClick: (currentPage: number) => void;
+    currentPage: number;
 }
-
-
-function Pagination({pagesCount}: IPagination) {
+//ОСТАЛОСЬ СДЕЛАТЬ ТАК, ЧТОБЫ ВЫБРАННАЯ СТРАНИЦА МЕНЯЛА СВОЙ ЦВЕТ (КНОПКА)
+function Pagination({pagesCount, onClick, currentPage}: IPagination) {
+    let smallestButtons = currentPage < 4;
+    let middleButtons = ((currentPage >= 4)&&(currentPage <= 40));
+    let largestButtons = currentPage > 40;
 
     return (
         <div className="pagination-wrapper">
             <ul className="pagination">
                 <li>
                 <i className="fa-solid fa-arrow-right"></i>
-                    <Button text='<' className='pagination-buttons'/>
+                    {(currentPage > 1) &&  <Button text='<' onClick={() => onClick(currentPage-1)} className='pagination-buttons'/>}
                 </li>
 
                 <li>
-                    <Button text='1' className='pagination-buttons'/>
+                    <Button text='1' onClick={() => onClick(1)} className='pagination-buttons'/>
                 </li>
 
                 <li>
-                    <span className = 'missing-values'>.</span>
+                    {(middleButtons || largestButtons) && <span className = 'missing-values'>.</span>}
                 </li>
 
                 <li>
-                    <Button text='8' className='pagination-buttons'/>
+                    {smallestButtons && <Button text={2} onClick={() => onClick(2)} className='pagination-buttons'/>}
+
+                    {middleButtons && <Button text={currentPage-1} onClick={() => onClick(currentPage-1)} className='pagination-buttons'/>}
+
+                    {largestButtons && <Button text={39} onClick={() => onClick(39)} className='pagination-buttons'/>}
                 </li>
 
                 <li>
-                    <Button text='9' className='pagination-buttons'/>
+                    {smallestButtons && <Button text={3} onClick={() => onClick(3)} className='pagination-buttons'/>}
+
+                    {middleButtons && <Button text={currentPage} onClick={() => onClick(currentPage)} className='pagination-buttons'/>}
+
+                    {largestButtons &&  <Button text={40} onClick={() => onClick(40)} className='pagination-buttons'/>}
                 </li>
 
                 <li>
-                    <Button text='10' className='pagination-buttons'/>
+
+                {smallestButtons && <Button text={4} onClick={() => onClick(4)} className='pagination-buttons'/>}
+
+                {middleButtons && <Button text={currentPage+1} onClick={() => onClick(currentPage+1)} className='pagination-buttons'/>}
+
+                {largestButtons &&  <Button text={41} onClick={() => onClick(41)} className='pagination-buttons'/>}
+   
                 </li>
 
                 <li>
-                    <span className = 'missing-values'>.</span>
+                    {(currentPage<40) && <span className = 'missing-values'>.</span>}
                 </li>
 
                 <li>
-                    <Button text={pagesCount ?? '...'} className='pagination-buttons'/>
+                    <Button text={pagesCount ?? '...'} onClick={() => onClick(pagesCount)} className='pagination-buttons'/>
                 </li>
 
                 <li>
-                    <Button text='>' className='pagination-buttons'/>
+                    {(currentPage < pagesCount) && <Button text='>' onClick={() => onClick(currentPage+1)} className='pagination-buttons'/>}
                 </li>
             </ul>
         </div>
