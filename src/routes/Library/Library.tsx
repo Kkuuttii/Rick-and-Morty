@@ -41,7 +41,7 @@ function Library() {
   const [pages, setPages] = useState<number>(1);
   const [currentPage, setCurrentPage] = useState<number>(1);        
 
-  const HandlerClickCharacter = (episodeURL: any) => {
+  const handlerClickCharacter = (episodeURL: any) => {
     setShowEpisodeCard(true);
     setEpisodeInfo(episodeURL);
   }
@@ -52,7 +52,6 @@ function Library() {
 
   async function getCharacterInfo () {
       let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
-      console.log(response);
       setCharacterInfo(response.data.results);
       setPages(response.data.info.pages)
   }
@@ -65,7 +64,7 @@ function Library() {
   let characterCards = useMemo(()=>{
     return characterInfo.map((item: ICharacterInfo) => {
       return (
-        <CharacterCard img = {item.image} name = {item.name} status = {item.status} species = {item.species} location = {item.location.name} episode = {getEpisodeNumber(item.episode[0])} episodeLink = {item.episode[0]} onClick = {(х) => HandlerClickCharacter(х)} key={item.id}/>
+        <CharacterCard img = {item.image} name = {item.name} status = {item.status} species = {item.species} location = {item.location.name} episode = {getEpisodeNumber(item.episode[0])} episodeLink = {item.episode[0]} onClick = {(х) => handlerClickCharacter(х)} key={item.id}/>
       )
     });
   }, [characterInfo])
@@ -92,7 +91,7 @@ function Library() {
        
         <Pagination pagesCount={pages} onClick={(currentPage) => {
           HandlerClickCurrentPage(currentPage);
-          console.log(currentPage);
+          console.log(currentPage); //я оставлю этот лог т.к. он мне нужен для разработки подсвечивания выбранной страницы
         }} currentPage={currentPage}/>
 
         
