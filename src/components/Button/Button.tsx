@@ -2,7 +2,7 @@ import './Button.css';
 import classNames from 'classnames';
 
 interface IButton {
-    text: string|number;
+    text: string | number;
     className?: string; 
     onClick?: () => void;
 }
