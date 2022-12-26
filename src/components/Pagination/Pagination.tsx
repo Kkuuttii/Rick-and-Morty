@@ -8,9 +8,9 @@ interface IPagination{
 }
 //ОСТАЛОСЬ СДЕЛАТЬ ТАК, ЧТОБЫ ВЫБРАННАЯ СТРАНИЦА МЕНЯЛА СВОЙ ЦВЕТ (КНОПКА)
 function Pagination({pagesCount, onClick, currentPage}: IPagination) {
-    let smallestButtons = currentPage < 4;
-    let middleButtons = ((currentPage >= 4)&&(currentPage <= 40));
-    let largestButtons = currentPage > 40;
+    let isSmallestButtonVisible = currentPage < 4;
+    let isMiddleButtonVisible = ((currentPage >= 4)&&(currentPage <= 40));
+    let isLargestButtonVisible = currentPage > 40;
 
     return (
         <div className="pagination-wrapper">
@@ -25,32 +25,32 @@ function Pagination({pagesCount, onClick, currentPage}: IPagination) {
                 </li>
 
                 <li>
-                    {(middleButtons || largestButtons) && <span className = 'missing-values'>.</span>}
+                    {(isMiddleButtonVisible || isLargestButtonVisible) && <span className = 'missing-values'>.</span>}
                 </li>
 
                 <li>
-                    {smallestButtons && <Button text={2} onClick={() => onClick(2)} className='pagination-buttons'/>}
+                    {isSmallestButtonVisible && <Button text={2} onClick={() => onClick(2)} className='pagination-buttons'/>}
 
-                    {middleButtons && <Button text={currentPage-1} onClick={() => onClick(currentPage-1)} className='pagination-buttons'/>}
+                    {isMiddleButtonVisible && <Button text={currentPage-1} onClick={() => onClick(currentPage-1)} className='pagination-buttons'/>}
 
-                    {largestButtons && <Button text={39} onClick={() => onClick(39)} className='pagination-buttons'/>}
+                    {isLargestButtonVisible && <Button text={39} onClick={() => onClick(39)} className='pagination-buttons'/>}
                 </li>
 
                 <li>
-                    {smallestButtons && <Button text={3} onClick={() => onClick(3)} className='pagination-buttons'/>}
+                    {isSmallestButtonVisible && <Button text={3} onClick={() => onClick(3)} className='pagination-buttons'/>}
 
-                    {middleButtons && <Button text={currentPage} onClick={() => onClick(currentPage)} className='pagination-buttons'/>}
+                    {isMiddleButtonVisible && <Button text={currentPage} onClick={() => onClick(currentPage)} className='pagination-buttons'/>}
 
-                    {largestButtons &&  <Button text={40} onClick={() => onClick(40)} className='pagination-buttons'/>}
+                    {isLargestButtonVisible &&  <Button text={40} onClick={() => onClick(40)} className='pagination-buttons'/>}
                 </li>
 
                 <li>
 
-                {smallestButtons && <Button text={4} onClick={() => onClick(4)} className='pagination-buttons'/>}
+                {isSmallestButtonVisible && <Button text={4} onClick={() => onClick(4)} className='pagination-buttons'/>}
 
-                {middleButtons && <Button text={currentPage+1} onClick={() => onClick(currentPage+1)} className='pagination-buttons'/>}
+                {isMiddleButtonVisible && <Button text={currentPage+1} onClick={() => onClick(currentPage+1)} className='pagination-buttons'/>}
 
-                {largestButtons &&  <Button text={41} onClick={() => onClick(41)} className='pagination-buttons'/>}
+                {isLargestButtonVisible &&  <Button text={41} onClick={() => onClick(41)} className='pagination-buttons'/>}
    
                 </li>
 
