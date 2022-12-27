@@ -7,9 +7,9 @@ interface IPagination{
     onClick: (currentPage: number) => void;
     currentPage: number;
 }
-//ОСТАЛОСЬ СДЕЛАТЬ ТАК, ЧТОБЫ ВЫБРАННАЯ СТРАНИЦА МЕНЯЛА СВОЙ ЦВЕТ (КНОПКА)
+
 function Pagination({pagesCount, onClick, currentPage}: IPagination) {
-    let [selectedPage, setSelectedPage] = useState<number>();
+    let [selectedPage, setSelectedPage] = useState<number>(1);
 
     let isSmallestButtonVisible = currentPage < 4;
     let isMiddleButtonVisible = ((currentPage >= 4)&&(currentPage <= 40));
