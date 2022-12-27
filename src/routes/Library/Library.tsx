@@ -91,7 +91,6 @@ function Library() {
        
         <Pagination pagesCount={pages} onClick={(currentPage) => {
           HandlerClickCurrentPage(currentPage);
-          console.log(currentPage); //я оставлю этот лог т.к. он мне нужен для разработки подсвечивания выбранной страницы
         }} currentPage={currentPage}/>
 
         
