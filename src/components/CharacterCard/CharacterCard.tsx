@@ -8,9 +8,11 @@ interface ICharacterCard {
   location: string,
   episode: string,
   episodeLink: string,
+  onClick?: (episodeLink?: string) => void;
 }
 
-function CharacterCard({img, name, status, species, location, episode, episodeLink}: ICharacterCard) {
+
+function CharacterCard({img, name, status, species, location, episode, episodeLink, onClick}: ICharacterCard) {
     return (
         <article className="character-card">
         <div className="character-card-image-wrapper"> <img src={img} alt="character" className="character-card-image"/> </div>
@@ -31,7 +33,7 @@ function CharacterCard({img, name, status, species, location, episode, episodeLi
   
           <div className="section">
             <span className="text-grey">First seen in:</span>
-            <a href={episodeLink}>{episode}</a>
+            <span onClick={()=>onClick?.(episodeLink)}>{episode}</span>
           </div>
         </div>
       </article>

@@ -8,7 +8,6 @@
     margin: 0.75rem;
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
       rgb(0 0 0 / 6%) 0px 2px 4px -1px;
-  
     color: white;
   }
   
@@ -59,5 +58,10 @@
     margin-bottom: 10px;
   }
   
+  .section span {
+    cursor: pointer;
+    align-self: flex-start;
+    word-break: break-word;
+  }
 
   

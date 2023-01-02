@@ -1,0 +1,46 @@
+.episode-info {
+    background: rgb(60, 62, 68);
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+      rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    color: white;
+
+    width: 35%;
+    height: 45%;
+    position:fixed;
+    left: 50%;
+    top: 55%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+     transform: translate(-50%,-50%);
+     z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.episode-info-title{
+    font-family: 'rick-and-morty';
+    font-size: 35px;
+   
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.9;
+
+}
+
+.loading-image{
+    height: 100%; 
+    position: absolute;
+}

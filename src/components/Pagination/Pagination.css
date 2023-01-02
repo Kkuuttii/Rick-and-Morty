@@ -1,0 +1,38 @@
+.pagination-wrapper{
+    display: flex;
+    justify-content: center;
+
+}
+
+.pagination{
+    display: block;
+    display: flex;
+    flex-direction: row;
+}
+
+.pagination li{
+    display: block;
+}
+
+.pagination-buttons{
+    min-width: 50px;
+}
+
+.missing-values{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.selected-button {
+    min-width: 50px;
+    
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    color: rgb(221, 216, 216); 
+}
+
+.selected-button:hover { 
+    background: #000; 
+    color: #fff; 
+    transition: all 0.5s ease-in; 
+}
