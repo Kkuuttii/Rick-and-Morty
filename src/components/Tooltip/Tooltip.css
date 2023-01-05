@@ -1,0 +1,22 @@
+.pop-up-window{
+position: absolute;
+bottom: 6.5em;
+left: 50%;
+transform: translate(-50%, 0);
+
+padding: .5em;
+text-align: center;
+
+height: auto;
+width: 75%;
+z-index: 1;
+
+background: rgb(48, 50, 55);
+border-radius: 0.5rem;
+box-shadow: rgba(0, 0, 0, 0.271) 0px 4px 6px -1px,
+  rgba(0, 0, 0, 0.233) 0px 2px 4px -1px;
+}
+
+.name-tooltip{
+    bottom: 11.5em;
+}
