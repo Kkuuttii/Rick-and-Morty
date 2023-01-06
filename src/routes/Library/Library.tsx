@@ -73,11 +73,6 @@ function Library() {
           <h2 >Character library</h2>
         </div> 
 
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-
         <div className="character-cards">
           {characterCards}
         </div>
