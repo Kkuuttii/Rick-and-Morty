@@ -43,8 +43,8 @@ function EpisodeCard({onClick, link}: IEpisodeCard) {
             {(!isLoading) && <div className="episode-info">
                 <div className="episode-info-title">Episode info</div>
                 <div>Name: {episode?.name}</div>
-                <div>Season: {episode?.episode}</div>
-                <div>Episode: {episode?.episode}</div>
+                <div>Season: {episode?.episode.slice(1,3)}</div>
+                <div>Episode: {episode?.episode.slice(4,6)}</div>
                 <div>Air date: {episode?.air_date}</div>
                 <Button text='Close' onClick={onClick}/>
             </div>}
