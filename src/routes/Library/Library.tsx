@@ -4,7 +4,6 @@ import CharacterCard from '../../components/CharacterCard/CharacterCard'
 import {getEpisodeNumber, displayedId} from '../../utils/Global'
 import axios from 'axios';
 import EpisodeCard from "../../components/EpisodeCard/EpisodeCard"
-// import Button from '../../components/Button/Button';
 import Pagination from '../../components/Pagination/Pagination'
 
 interface ICharacterInfo {
@@ -32,9 +31,6 @@ interface ILocation extends IOrigin {
 };
 
 function Library() {
-  // const [count, setCount] = useState(0);
-  // let count2 = 0;
-
   const [characterInfo, setCharacterInfo] = useState<ICharacterInfo[]>([]);
   const [showEpisodeCard, setShowEpisodeCard] = useState<boolean>(false);
   const [episodeInfo, setEpisodeInfo] = useState<string>("");
@@ -60,7 +56,6 @@ function Library() {
     getCharacterInfo();
   }, [currentPage]);
  
-
   let characterCards = useMemo(()=>{
     return characterInfo.map((item: ICharacterInfo) => {
       return (
@@ -87,14 +82,10 @@ function Library() {
           {characterCards}
         </div>
 
-        
-       
         <Pagination pagesCount={pages} onClick={(currentPage) => {
           HandlerClickCurrentPage(currentPage);
         }} currentPage={currentPage}/>
 
-        
-        <div>1 2 3 4 ... 42</div>
       </div>
     )
 }
