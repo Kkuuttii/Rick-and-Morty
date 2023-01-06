@@ -1,7 +1,7 @@
 import './Library.css';
 import { useState, useEffect, useMemo } from 'react';
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
-import {getEpisodeNumber, displayedId} from '../../utils/Global'
+import {getEpisodeNumber} from '../../utils/Global'
 import axios from 'axios';
 import EpisodeCard from "../../components/EpisodeCard/EpisodeCard"
 import Pagination from '../../components/Pagination/Pagination'
