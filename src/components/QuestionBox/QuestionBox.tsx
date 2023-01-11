@@ -9,11 +9,11 @@ function QuestionBox() {
     const questions = [question1, question2,question3];
 
     return (
-        <div>
-            <div className='temprorary'>
-                <img src={mainImage} alt="RickAndMorty" />
+        <div className="question-box">
+            <div className='quiz-image-wrapper'>
+                <img src={mainImage} alt="RickAndMorty" className='quiz-image'/>
             </div>
-            <div>
+            <div className="question-wrapper"> 
                 <p>{question2}</p>
             </div>
         </div>

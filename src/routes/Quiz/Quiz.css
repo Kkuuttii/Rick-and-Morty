@@ -1,5 +1,19 @@
-.temporalClass{
+.quiz{
     height: 100%;
-    background-color: rgba(142, 72, 197, 0.781);
+    display: flex;
+    justify-content:space-around;
     
+}
+
+.playing-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.check-box-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }

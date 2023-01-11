@@ -7,9 +7,14 @@ import ScoreTable from "../../components/ScoreTable/ScoreTable";
 
 function Quiz() {
     return (
-        <div className="temporalClass">
-            <QuestionBox/> 
-            <CheckBox/>  
+        <div className="quiz">
+            <div className="playing-field">
+                <QuestionBox/> 
+                <div className="check-box-wrapper">
+                    <CheckBox/> 
+                </div>
+            </div>
+             
             <ScoreTable/>
         </div>
 
