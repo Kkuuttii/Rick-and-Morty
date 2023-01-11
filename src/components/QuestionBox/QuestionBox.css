@@ -1,4 +1,22 @@
-.temprorary{
-    width: 270px;
+.question-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
 }
+
+.quiz-image-wrapper{
+    width: 30%;
+    margin-right: 50px;
+}
+
+.quiz-image{
+    width: 100%;
+}
+
+.question-wrapper {
+    width: 50%;
+}
+
 
