@@ -37,10 +37,6 @@ function Library() {
   const [episodeInfo, setEpisodeInfo] = useState<string>("");
   const [pages, setPages] = useState<number>(1);
   const [currentPage, setCurrentPage] = useState<number>(1);   
-  
-  //мои изменения
-  const [currentFilterName, setCurrentFilterName] = useState<string>("");
-  const [startFiltering, setStartFiltering] = useState<boolean>(false);
 
   const handlerClickCharacter = (episodeURL: any) => {
     setShowEpisodeCard(true);
@@ -52,30 +48,16 @@ function Library() {
   }
 
   async function getCharacterInfo () {
-      let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}&name=${currentFilterName}`);
+      let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
 
       setCharacterInfo(response.data.results);
       setPages(response.data.info.pages)
   }
 
-  // //тут мои изменения!
-  // async function getFilterdCharacterInfo (name: string) {
-  //   let response = await axios.get(`https://rickandmortyapi.com/api/character/?name=${currentFilterName}`);
-  //   // currentFilterName(name);
-  //   setCharacterInfo(response.data.results);
-  //   setPages(response.data.info.pages)
-  // }
-
   useEffect (()=> {
     getCharacterInfo();
   }, [currentPage]);
 
-// // что происходит?
-//   useEffect (()=> {
-//     getFilterdCharacterInfo();
-//   }, [currstartFilteringentPage]);
-
- 
   let characterCards = useMemo(()=>{
     return characterInfo.map((item: ICharacterInfo) => {
       return (
@@ -92,9 +74,6 @@ function Library() {
         <div className="library-title">
           <h2 >Character library</h2>
         </div> 
-
-        {/* мои изменения */}
-        <SearchField onHandleSearch={(name) => setCurrentFilterName (name)}/>
 
         <div className="character-cards">
           {characterCards}
