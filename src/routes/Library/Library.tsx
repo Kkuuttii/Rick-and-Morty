@@ -6,6 +6,8 @@ import axios from 'axios';
 import EpisodeCard from "../../components/EpisodeCard/EpisodeCard"
 import Pagination from '../../components/Pagination/Pagination'
 import SearchField from '../../components/SearchField/SearchField';
+import loading from "../../images/loading.gif";
+
 
 interface ICharacterInfo {
   "id": number,
@@ -32,11 +34,14 @@ interface ILocation extends IOrigin {
 };
 
 function Library() {
+  const [isLibraryLoasding, setisLibraryLoasding] = useState<boolean>(true)
   const [characterInfo, setCharacterInfo] = useState<ICharacterInfo[]>([]);
   const [showEpisodeCard, setShowEpisodeCard] = useState<boolean>(false);
   const [episodeInfo, setEpisodeInfo] = useState<string>("");
-  const [pages, setPages] = useState<number>(1);
+  const [pages, setPages] = useState<number>(1); //сколько всего страниц
   const [currentPage, setCurrentPage] = useState<number>(1);   
+  const [currentValue, setCurrentValue] = useState<string>(""); 
+  const [currentFilter, setCurrentFilter] = useState<string>("name"); 
 
   const handlerClickCharacter = (episodeURL: any) => {
     setShowEpisodeCard(true);
@@ -45,18 +50,19 @@ function Library() {
 
   const HandlerClickCurrentPage = (pageSelected: number) => {
     setCurrentPage(pageSelected)
-  }
+  } 
 
   async function getCharacterInfo () {
-      let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`);
+      let response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}&${currentFilter}=${currentValue}`);
 
       setCharacterInfo(response.data.results);
       setPages(response.data.info.pages)
+      setisLibraryLoasding(false);
   }
 
-  useEffect (()=> {
-    getCharacterInfo();
-  }, [currentPage]);
+  useEffect (() => {
+      getCharacterInfo();
+  }, [currentPage, currentValue]);
 
   let characterCards = useMemo(()=>{
     return characterInfo.map((item: ICharacterInfo) => {
@@ -66,7 +72,6 @@ function Library() {
     });
   }, [characterInfo])
 
-
     return (
       <div className="library">
         {showEpisodeCard && <EpisodeCard link={episodeInfo} onClick={() => setShowEpisodeCard(false)}/>}
@@ -75,13 +80,17 @@ function Library() {
           <h2 >Character library</h2>
         </div> 
 
-        <div className="character-cards">
-          {characterCards}
-        </div>
+        <SearchField onSearch={(value) => setCurrentValue(value)} onCheckingFilter={(filter)=>setCurrentFilter(filter)}/>
 
-        <Pagination pagesCount={pages} onClick={(currentPage) => {
-          HandlerClickCurrentPage(currentPage);
-        }} currentPage={currentPage}/>
+        {isLibraryLoasding && <div className="library-loading"> 
+          <img src={loading} alt="Идет загрузка страницы" className="loading-image"/>
+        </div>}
+
+        {(!isLibraryLoasding) && <div className="character-cards">
+          {characterCards}
+        </div>}
+
+        {(pages > 1) && (!isLibraryLoasding) && <Pagination pagesCount={pages} onClick={(currentPage) => {HandlerClickCurrentPage(currentPage)}} currentPage={currentPage}/>}
 
       </div>
     )

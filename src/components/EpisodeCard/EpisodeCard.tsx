@@ -50,7 +50,6 @@ function EpisodeCard({onClick, link}: IEpisodeCard) {
             </div>}
 
             <div className="overlay">
-
             </div>
 
         </div>

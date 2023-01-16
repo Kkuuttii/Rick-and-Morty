@@ -1,24 +1,23 @@
 import './SearchField.css';
-import Button from '../Button/Button';
 
 interface ISearchField {
-    onHandleSearch: (name: string) => void;
+    onSearch: (name: string) => void;
+    onCheckingFilter: (name: string) => void;
 }
 
-function SearchField({onHandleSearch}: ISearchField) {
+function SearchField({onSearch, onCheckingFilter}: ISearchField) {
+
     return (
             <form className='search-field'>
-                <select className='select-filter'>
+                <select className='select-filter' onChange={(event)=> onCheckingFilter(event.target.value)}>
                     <option>name</option>
                     <option>status</option>
                     <option>species</option>
-                    <option>type</option>
                     <option>gender</option>
                 </select>
 
-                <input type="search" placeholder="Rick..." className='search-input'/>
-                {/* onKeyPress={handleKeyPress}  */}
-                <Button text='Search' onClick={()=>console.log('начался поиск')} className="search-button"/>
+                <input type="search" placeholder="Rick..." className='search-input' onChange={(event)=> onSearch(event.target.value)} />
+
             </form>
        
     )

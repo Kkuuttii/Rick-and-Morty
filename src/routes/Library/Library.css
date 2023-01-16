@@ -24,4 +24,13 @@
     font-size: 50px;
     margin-top: 20px;
   }
+
+  .library-loading{
+    height: 50%;
+    position: initial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%
+  }
   

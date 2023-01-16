@@ -4,7 +4,7 @@ import './CheckBox.css';
 
 function CheckBox() {
     return (
-        <div className='check-box'>
+        <div>
             <Button text='answer 1' onClick={()=>console.log('answer1')} className="checkbox-button"/>
             <Button text='answer 2' onClick={()=>console.log('answer2')} className="checkbox-button"/>
             <Button text='answer 3' onClick={()=>console.log('answer3')} className="checkbox-button"/>
