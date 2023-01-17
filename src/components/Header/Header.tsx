@@ -9,7 +9,7 @@ function Header() {
     return (
         <div className='header' >
             <div>
-                <img src={logo} alt="Main Page" className='logo'/>
+                <img src={logo} alt="Main Page" className='logo'onClick={()=>navigate('/')}/>
             </div>
             <div>
                 <Button text ='About' className='header-button' onClick={()=>navigate('/about')}/>
