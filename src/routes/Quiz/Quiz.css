@@ -2,6 +2,7 @@
     height: 100%;
     display: flex;
     justify-content:space-around;
+    padding: 0 50px 0 50px;
     
 }
 
@@ -12,8 +13,4 @@
     flex-direction: column;
 }
 
-.check-box-wrapper{
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
+

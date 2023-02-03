@@ -1,13 +1,37 @@
-// import mainImage from "../../images/mainImage.png"
 import Button from '../../components/Button/Button';
 import './CheckBox.css';
+import {shuffleArray} from "../../utils/Global"
+import { useState } from 'react';
 
-function CheckBox() {
+interface ICheckBox {
+    rightAnswer: string;
+    wrongAnswer1: string; 
+    wrongAnswer2: string;
+    onClick: (wins: number, losses: number) => void;
+}
+
+
+function CheckBox({rightAnswer, wrongAnswer1, wrongAnswer2, onClick}: ICheckBox) {
+    const [isRightAnswer, setIsRightAnswer] = useState<boolean>();
+
+    const answers = [rightAnswer, wrongAnswer1, wrongAnswer2];
+
+    const onClickHandler = (index: number) => {
+        if (rightAnswer === answers[index]) {
+            setIsRightAnswer(true);
+            onClick(1,0);
+        } else {
+            setIsRightAnswer(false);
+            onClick(0,1);
+        }
+    }
+
+    shuffleArray(answers);
     return (
-        <div>
-            <Button text='answer 1' onClick={()=>console.log('answer1')} className="checkbox-button"/>
-            <Button text='answer 2' onClick={()=>console.log('answer2')} className="checkbox-button"/>
-            <Button text='answer 3' onClick={()=>console.log('answer3')} className="checkbox-button"/>
+        <div className='check-box'>
+            <Button text={answers[0]} onClick={()=>onClickHandler(0)} className="checkbox-button"/>
+            <Button text={answers[1]} onClick={()=>onClickHandler(1)} className="checkbox-button"/>
+            <Button text={answers[2]} onClick={()=>onClickHandler(2)} className="checkbox-button"/>
         </div>
     )
 }

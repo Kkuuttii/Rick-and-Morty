@@ -1,7 +1,13 @@
-
+.check-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
 
 .checkbox-button{
-    max-width: 1000px;
-    width: 400px; 
+    max-width: 100%;
+    width: 370px;
 }
 

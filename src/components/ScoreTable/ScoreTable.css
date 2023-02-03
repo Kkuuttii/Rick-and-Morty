@@ -1,0 +1,69 @@
+.round-counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-table{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10px 30px 10px 0;
+    align-items: center;
+}
+
+.comment-block{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.mind-cloud{
+    width: 95%;
+}
+
+.comment{
+    position: absolute;
+    top: 30%;
+    margin-right: 5%;
+    color: rgb(55, 52, 52);
+    text-align: center;
+    text-overflow: ellipsis;
+   
+    max-width: 80%;
+    font-size: large;
+    line-height: 200%;
+}
+
+.emotions-blosk{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.emotion-pic{
+    width: 250px;
+}
+
+.change-character{
+    min-width: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 85%;
+    left: 80%;
+
+    text-align: center;
+    text-overflow: ellipsis;
+
+    align-self:flex-end
+}
+
+.score{
+    margin-top: -10px;
+}
