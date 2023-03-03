@@ -1,21 +1,43 @@
 import './FactCard.css';
 
-function FactCard() {
-    const text = 'Rick and Morty has had a raft of celebrity guest stars doing voices on the show over the duration of its run to-date. Just a few notable names include Stephen Colbert, Dana Carvey, Claudia Black, Nathan Fillion, Susan Sarandon, Joel McHale, Rich Fulcher, Christian Slater and Danny Trejo.';
-    
+interface IFactCard {
+  text: string;
+  image: string;
+  type?: string;
+}
+
+function FactCard({text, image, type = "normal"} :IFactCard) { 
+  if (type === "revers") {
     return (
       <div className="fact-card">
+        <div>
+          <p>
+            {text}
+          </p>
+        </div>
 
-          <div className="randomImage"> 
-            image 
-          </div>
-
-          <div>
-              {" "}
-              <p> {text} </p>{" "}
-          </div>
-
+        <div className="randomImage revers-image"> 
+          <img src={image} alt="factImage" />
+        </div>
       </div>
     )
+  } else  {
+    return (
+      <div className="fact-card">
+  
+        <div className="randomImage"> 
+          <img src={image} alt="factImage" />
+        </div>
+  
+        <div>
+          <p>
+            {text}
+          </p>
+        </div>
+  
+      </div>
+    )
+  } 
+
 }
 export default FactCard;

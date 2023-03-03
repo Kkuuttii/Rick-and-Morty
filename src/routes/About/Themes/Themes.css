@@ -1,0 +1,36 @@
+.themes{
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  min-width: 80%;
+  height: 100%;
+  margin: 10px 50px;
+}
+  
+.themes-image {
+  height: 90%;
+}
+  
+.themes-text{
+  height: 90%;
+  width: 50%;
+  padding: 5px 20px 10px 0;
+  overflow: auto;
+}
+  
+.themes-text h2{
+  font-family: rick-and-morty;
+}
+
+.themes-text::-webkit-scrollbar{
+  background-color: #04383d70;
+  width: 5px;
+}
+  
+.themes-text::-webkit-scrollbar-thumb {
+  background-color: rgba(142, 223, 127, 0.749);
+}
+
+.themes-text p{
+  margin-top: 15px;
+}
