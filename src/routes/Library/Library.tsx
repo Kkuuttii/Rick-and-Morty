@@ -10,23 +10,23 @@ import loading from "../../images/loading.gif";
 
 
 interface ICharacterInfo {
-  "id": number,
-  "name": string,
-  "status": string,
-  "species": string,
-  "type": string,
-  "gender": string,
-  "origin": IOrigin,
-  "location": ILocation,
-  "image": string,
-  "episode": string[],
-  "url": string,
-  "created": string,
+  id : number,
+  name: string,
+  status: string,
+  species: string,
+  type: string,
+  gender: string,
+  origin: IOrigin,
+  location: ILocation,
+  image: string,
+  episode: string[],
+  url: string,
+  created: string,
 }
 
 interface IOrigin {
-  "name": string,
-  "url": string
+  name: string,
+  url: string
 }
 
 interface ILocation extends IOrigin {
@@ -76,7 +76,7 @@ function Library() {
       <div className="library">
         {showEpisodeCard && <EpisodeCard link={episodeInfo} onClick={() => setShowEpisodeCard(false)}/>}
 
-        <div className="library-title">
+        <div className="library-title rick-and-morty-font">
           <h2 >Character library</h2>
         </div> 
 
