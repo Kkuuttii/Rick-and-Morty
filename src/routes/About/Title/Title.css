@@ -1,0 +1,57 @@
+.title{
+    position: relative;
+    min-width: 100vw;
+    height: 100%;
+    background-color: #360033;
+    background: url('../../../images/about.png');
+
+     -webkit-background-size: cover;
+          background-size: cover;
+          background-position:center; 
+}
+
+.head-text{
+    position: relative;
+    z-index: 2;
+    margin: 0 20% 0 20%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #360033;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.5;
+
+    background: linear-gradient(to right, #0b8793, #360033);
+    animation: gradient 10s infinite linear; 
+    background-size: 400%; 
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
+}
+
+.about-title {
+  padding-top: 10%;
+}
+
+.about-button-wrapper{
+  padding-top: 5%;
+}

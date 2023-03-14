@@ -1,0 +1,46 @@
+.site-info{
+    display: flex;
+ 
+    justify-content: space-around;
+    align-items: center;
+    min-width: 80%;
+    height: 80%;
+    margin: 0;
+    padding: 0 50px;
+}
+  
+.site-info-image{
+    height: 80%;
+}
+
+.site-info-text h2 {
+    font-family: rick-and-morty;
+    font-size: 30px;
+}
+
+.site-info-text ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+
+    font-size: 25px;
+}
+
+.site-info-text a {
+    text-decoration: none;
+    color: rgba(146, 238, 129, 0.279);
+}
+
+.site-info-text a:hover {
+    color: rgba(0, 0, 0, 0.749);
+}
+
+.site-info-text a:visited {
+    color: rgba(145, 238, 129, 0.568);
+}
+
+.site-info-text a:visited:hover {
+    color: rgba(0, 0, 0, 0.749);
+}

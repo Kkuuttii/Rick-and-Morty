@@ -1,0 +1,26 @@
+.main-characters{
+    min-width: 100vw;
+    height: 100%;
+    padding-bottom: 10px;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0;
+}
+
+.main-characters h2{
+    font-family: rick-and-morty;
+}
+  
+.main-characters-cards{
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    margin: 10px 50px 0 50px;
+}
+
+.other-characters-button{
+    max-width: 250px; 
+}

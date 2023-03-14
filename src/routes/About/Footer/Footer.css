@@ -1,0 +1,57 @@
+.footer{
+    display: flex;
+ 
+    justify-content: space-around;
+    align-items: center;
+
+    min-width: 80%;
+    height: 20%;
+    margin: 0;
+    padding: 0 100px;
+
+    background-color: #360033;
+    background: linear-gradient(to right, #15666d, #320030); 
+    animation: gradient 10s infinite linear; 
+    background-size: 200%; 
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
+}
+
+.footer-logo{
+    height: 30%;
+}
+
+.footer-nav{
+    font-family: 'rick-and-morty';
+}
+
+.navigation-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+
+.contact-icon{
+    width: 70%;
+}
+
+.icon-wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    padding: 0;
+}
