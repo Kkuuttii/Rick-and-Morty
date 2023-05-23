@@ -15,6 +15,7 @@
   height: 90%;
   width: 50%;
   padding: 5px 20px 10px 0;
+  margin: 0 5px 0 20px;
   overflow: auto;
 }
   
@@ -34,3 +35,4 @@
 .themes-text p{
   margin-top: 15px;
 }
+

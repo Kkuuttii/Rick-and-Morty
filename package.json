@@ -2,6 +2,7 @@
   "name": "typescript-template",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Kkuuttii.github.io/Rick-and-Morty",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
@@ -30,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +55,7 @@
   },
   "devDependencies": {
     "@types/react-scroll": "^1.8.6",
-    "@types/react-slick": "^0.23.10"
+    "@types/react-slick": "^0.23.10",
+    "gh-pages": "^5.0.0"
   }
 }
