@@ -4,24 +4,6 @@
     justify-content: space-between;
     padding: 50px 200px 50px 200px;
     height: 100%;
-    background-color: #360033;
-
-    background: linear-gradient(to right, #0b8793, #360033); 
-    
-    animation: gradient 10s infinite linear; 
-    background-size: 400%; 
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 80% 0%;
-    }
-    50% {
-        background-position: 20% 100%;
-    }
-    100% {
-        background-position: 80% 0%;
-    }
 }
 
 .info-box {
@@ -54,5 +36,4 @@ div{
 
 .main-image-container{
     max-width: 35vw;
-
 }
